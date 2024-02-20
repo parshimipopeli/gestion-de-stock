@@ -1,15 +1,32 @@
 package fr.parshimipopeli.gestion.de.stock.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name="cdeFournisseur")
 public class CommandeFournisseur extends AbstactEntity {
+
+   @Id
+   private Long id;
+
+   @Column(name = "code")
+   private String code;
+
+   @Column(name = "dateCommande")
+   private Date dateCommande;
+
+   @ManyToOne
+   @JoinColumn(name = "idfournisseur")
+   private Fournisseur fournisseur;
+
+   @OneToMany(mappedBy = "commandefournisseur")
+   private List<LigneCommandeFournisseur> commandeFournisseurList;
+
+
 }

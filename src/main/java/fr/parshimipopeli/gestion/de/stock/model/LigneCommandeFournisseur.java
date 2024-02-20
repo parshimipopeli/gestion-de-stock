@@ -6,9 +6,6 @@ import lombok.*;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name="ligneCdeFournisseur")
 public class LigneCommandeFournisseur extends AbstactEntity {

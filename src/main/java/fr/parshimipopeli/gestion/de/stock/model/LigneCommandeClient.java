@@ -1,16 +1,25 @@
 package fr.parshimipopeli.gestion.de.stock.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name="ligneCdeclient")
 public class LigneCommandeClient extends AbstactEntity {
+
+    @Id
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name="idarticle")
+    private Article article;
+
+
+    @ManyToOne
+    @JoinColumn(name="idcommandeclient")
+    private  CommandeClient commandeClient;
+
 }

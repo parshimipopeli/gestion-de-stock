@@ -1,21 +1,17 @@
 package fr.parshimipopeli.gestion.de.stock.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name="adresse")
 @Embeddable
 public class Adresse {
 
+    @Id
+    private Long id;
 
     private String rue;
 

@@ -1,5 +1,6 @@
 package fr.parshimipopeli.gestion.de.stock.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -8,12 +9,12 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name="cdeClient")
 public class CommandeClient extends AbstactEntity {
+
+    @Id
+    private Long id;
 
     private String codeCommande;
 
@@ -24,5 +25,5 @@ public class CommandeClient extends AbstactEntity {
     private Client client;
 
     @OneToMany(mappedBy = "commandeclient")
-    private List<LigneCommandeClient> commandeClients;
+    private List<LigneCommandeClient> ligneCommandeClients;
 }
