@@ -1,11 +1,11 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/gestionStosk
-    username:
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:postgresql://localhost:5432/gestionStock
+    username: postgres
+    password: Lam62122phil
+    driver-class-name: org.postgresql.Driver
   jpa:
-    database:
-      hibernate.dll-auto: update
-      generate-dll: true
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: update
       show-sql: true

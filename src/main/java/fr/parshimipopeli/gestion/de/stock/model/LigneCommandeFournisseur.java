@@ -1,7 +1,6 @@
 package fr.parshimipopeli.gestion.de.stock.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Data
@@ -9,4 +8,15 @@ import lombok.*;
 @Entity
 @Table(name="ligneCdeFournisseur")
 public class LigneCommandeFournisseur extends AbstactEntity {
+
+    @Id
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "idarticle")
+    private Article article;
+
+    @ManyToOne
+    @JoinColumn(name = "idcommandefournisseur")
+    private CommandeFournisseur commandeFournisseur;
 }

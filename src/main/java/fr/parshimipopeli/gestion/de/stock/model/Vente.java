@@ -9,4 +9,7 @@ import lombok.*;
 @Entity
 @Table(name="vente")
 public class Vente extends AbstactEntity {
+
+    private String code;
+
 }

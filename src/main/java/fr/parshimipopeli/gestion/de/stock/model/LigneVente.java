@@ -1,7 +1,6 @@
 package fr.parshimipopeli.gestion.de.stock.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Data
@@ -9,4 +8,13 @@ import lombok.*;
 @Entity
 @Table(name="ligenVente")
 public class LigneVente extends AbstactEntity {
+
+    @Id
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "idvente")
+    private Vente vente;
+
+    private Long quantite;
 }
