@@ -8,13 +8,13 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name="entreprise")
+@Table(name = "entreprise")
 public class Entreprise extends AbstactEntity {
 
     @Column(name = "nom")
     private String nom;
 
-    @Column(name = "desc")
+    @Column(name = "description")
      private String description;
 
     @Embedded
