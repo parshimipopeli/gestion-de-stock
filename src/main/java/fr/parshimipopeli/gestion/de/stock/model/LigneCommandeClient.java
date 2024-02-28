@@ -20,6 +20,6 @@ public class LigneCommandeClient extends AbstactEntity {
 
     @ManyToOne
     @JoinColumn(name="idcommandeclient")
-    private  CommandeClient commandeClient;
+    private  CommandeClient commandeclient;
 
 }

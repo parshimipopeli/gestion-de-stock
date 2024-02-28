@@ -26,7 +26,7 @@ public class CommandeFournisseur extends AbstactEntity {
    private Fournisseur fournisseur;
 
    @OneToMany(mappedBy = "commandefournisseur")
-   private List<LigneCommandeFournisseur> commandeFournisseurList;
+   private List<LigneCommandeFournisseur> ligneCommandeFournisseur;
 
 
 }

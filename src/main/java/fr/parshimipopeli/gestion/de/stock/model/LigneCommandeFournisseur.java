@@ -18,5 +18,5 @@ public class LigneCommandeFournisseur extends AbstactEntity {
 
     @ManyToOne
     @JoinColumn(name = "idcommandefournisseur")
-    private CommandeFournisseur commandeFournisseur;
+    private CommandeFournisseur commandefournisseur;
 }
