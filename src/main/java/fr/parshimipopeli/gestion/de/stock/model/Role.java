@@ -1,8 +1,6 @@
 package fr.parshimipopeli.gestion.de.stock.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Data
@@ -11,8 +9,10 @@ import lombok.*;
 @Table(name = "role")
 public class Role extends AbstactEntity {
 
-    @Id
-    private Long id;
-
+    @JoinColumn(name = "nomrole")
     private String nom;
+
+    @ManyToOne
+    @JoinColumn(name = "idutilisateur")
+    private Utilisateur utilisateur;
 }

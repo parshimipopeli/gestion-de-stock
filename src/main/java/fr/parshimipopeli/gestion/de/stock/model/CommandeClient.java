@@ -13,8 +13,6 @@ import java.util.List;
 @Table(name="cdeClient")
 public class CommandeClient extends AbstactEntity {
 
-    @Id
-    private Long id;
 
     private String codeCommande;
 

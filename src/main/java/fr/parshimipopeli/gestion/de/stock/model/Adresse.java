@@ -2,16 +2,12 @@ package fr.parshimipopeli.gestion.de.stock.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
+import java.io.Serializable;
 @Data
 @NoArgsConstructor
-@Entity
-@Table(name="adresse")
+@EqualsAndHashCode
 @Embeddable
-public class Adresse {
-
-    @Id
-    private Long id;
+public class Adresse implements Serializable {
 
     private String rue;
 

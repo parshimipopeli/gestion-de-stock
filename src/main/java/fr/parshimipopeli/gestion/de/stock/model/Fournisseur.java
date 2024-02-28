@@ -9,10 +9,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name="fournisseur")
-public class Fournisseur {
-
-    @Id
-    private Long id;
+public class Fournisseur extends AbstactEntity {
 
     @Column(name = "nom")
     private String nom;

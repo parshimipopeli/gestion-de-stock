@@ -12,9 +12,6 @@ import java.util.List;
 @Table(name="cdeFournisseur")
 public class CommandeFournisseur extends AbstactEntity {
 
-   @Id
-   private Long id;
-
    @Column(name = "code")
    private String code;
 

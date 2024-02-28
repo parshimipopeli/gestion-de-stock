@@ -10,8 +10,11 @@ import lombok.*;
 @Table(name="ligneCdeclient")
 public class LigneCommandeClient extends AbstactEntity {
 
-    @Id
-    private Long id;
+    @Column(name = "qte")
+    private Long quantite;
+
+    @Column(name = "pu")
+    private Float prixUnitaire;
 
     @ManyToOne
     @JoinColumn(name="idarticle")

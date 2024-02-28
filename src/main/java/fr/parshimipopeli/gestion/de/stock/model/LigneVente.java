@@ -9,12 +9,13 @@ import lombok.*;
 @Table(name="ligenVente")
 public class LigneVente extends AbstactEntity {
 
-    @Id
-    private Long id;
-
     @ManyToOne
     @JoinColumn(name = "idvente")
     private Vente vente;
 
+    @Column(name = "qte")
     private Long quantite;
+
+    @Column(name = "pu")
+    private Float prixUnitaire;
 }
