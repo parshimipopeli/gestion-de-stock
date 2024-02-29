@@ -4,9 +4,11 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name="article")
 public class Article extends AbstactEntity {
@@ -35,4 +37,5 @@ public class Article extends AbstactEntity {
     @ManyToOne
     @JoinColumn(name="idcategorie")
     private Categorie categorie;
+
 }

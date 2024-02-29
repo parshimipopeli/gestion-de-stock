@@ -5,12 +5,16 @@ import fr.parshimipopeli.gestion.de.stock.model.Utilisateur;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.OneToMany;
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
+@Builder
 public class EntrepriseDto {
+
+    private Long id;
 
     private String nom;
 

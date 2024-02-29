@@ -18,6 +18,12 @@ public class CommandeClient extends AbstactEntity {
 
     private Date dateCommande;
 
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    private StatusCommande statusCommande;
+
+    private Integer idEntreprise;
+
     @ManyToOne
     @JoinColumn(name="idclient")
     private Client client;

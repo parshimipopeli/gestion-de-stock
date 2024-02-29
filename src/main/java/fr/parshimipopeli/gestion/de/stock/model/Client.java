@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Table(name="client")
 /**
- * Classe qui represente un objet client avec tous ces atrtibuts
+ * Classe qui represente un objet client avec tous ces attributs
  */
 public class Client extends AbstactEntity {
 
@@ -32,6 +32,9 @@ public class Client extends AbstactEntity {
 
     @Column(name="tel")
     private String telephone;
+
+    @Column(name = "identreprise")
+    private Integer idEntreprise;
 
     @OneToMany(mappedBy = "client")
     private List<CommandeClient> commandeClients;
