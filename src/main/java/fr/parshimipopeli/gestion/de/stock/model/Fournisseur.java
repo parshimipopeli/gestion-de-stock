@@ -29,6 +29,9 @@ public class Fournisseur extends AbstactEntity {
     @Column(name = "telephone")
     private String telephone;
 
+    @Column(name = "identreprise")
+    private Integer idEntreprise;
+
     @OneToMany(mappedBy = "fournisseur")
     private List<CommandeFournisseur> commandeFournisseurList;
 

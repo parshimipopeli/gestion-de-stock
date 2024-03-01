@@ -1,6 +1,5 @@
 package fr.parshimipopeli.gestion.de.stock.dto;
 
-import fr.parshimipopeli.gestion.de.stock.model.Adresse;
 import fr.parshimipopeli.gestion.de.stock.model.Article;
 import lombok.Builder;
 import lombok.Data;
@@ -28,7 +27,6 @@ public class ArticleDto {
     private String photo;
 
     private CategorieDto categorie;
-
     public static ArticleDto fromEntity(Article article) {
         if (article == null) {
             return null;
@@ -61,4 +59,5 @@ public class ArticleDto {
         article.setCategorie(articleDto.categorie.toEntity(articleDto.getCategorie()));
         return  article;
     }
+
 }

@@ -18,6 +18,13 @@ public class CommandeFournisseur extends AbstactEntity {
    @Column(name = "dateCommande")
    private Date dateCommande;
 
+   @Column(name = "statusCommande")
+   @Enumerated(EnumType.STRING)
+   private StatusCommande statusCommande;
+
+   @Column(name = "identreprise")
+   private Integer idEntreprise;
+
    @ManyToOne
    @JoinColumn(name = "idfournisseur")
    private Fournisseur fournisseur;

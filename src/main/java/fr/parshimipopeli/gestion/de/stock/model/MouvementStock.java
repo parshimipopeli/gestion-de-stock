@@ -20,6 +20,9 @@ public class MouvementStock extends AbstactEntity {
     @Column(name = "typemvmt")
     private TypeMvmtStock typeMvmtStock;
 
+    @Column(name = "identreprise")
+    private Integer idEntreprise;
+
     @ManyToOne
     @JoinColumn(name = "idarticle")
     private Article article;

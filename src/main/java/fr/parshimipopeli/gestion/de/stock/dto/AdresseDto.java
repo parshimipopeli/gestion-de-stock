@@ -19,7 +19,7 @@ import lombok.Data;
 
         private String pays;
 
-        public AdresseDto fromEntity(Adresse adresse) {
+        public static AdresseDto fromEntity(Adresse adresse) {
             if (adresse == null) {
                 return null;
             }
@@ -33,7 +33,7 @@ import lombok.Data;
                     .build();
         }
 
-        public Adresse toEntity(AdresseDto adresseDto) {
+        public static Adresse toEntity(AdresseDto adresseDto) {
             if (adresseDto == null) {
                 return null;
             }

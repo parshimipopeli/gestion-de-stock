@@ -42,4 +42,7 @@ public class Utilisateur extends AbstactEntity {
     private List<Role> roles;
 
 
+    public static Utilisateur toEntity() {
+        return null;
+    }
 }

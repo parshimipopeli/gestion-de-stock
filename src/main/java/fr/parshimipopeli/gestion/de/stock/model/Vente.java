@@ -21,4 +21,7 @@ public class Vente extends AbstactEntity {
     @Column(name = "commentaire")
     private String commentaire;
 
+    @Column(name = "identreprise")
+    private Integer idEntreprise;
+
 }

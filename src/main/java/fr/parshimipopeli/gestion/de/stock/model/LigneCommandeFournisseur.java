@@ -15,6 +15,9 @@ public class LigneCommandeFournisseur extends AbstactEntity {
     @Column(name = "pu")
     private Float prixUnitaire;
 
+    @Column(name = "identreprise")
+    private Integer idEntreprise;
+
     @ManyToOne
     @JoinColumn(name = "idarticle")
     private Article article;
