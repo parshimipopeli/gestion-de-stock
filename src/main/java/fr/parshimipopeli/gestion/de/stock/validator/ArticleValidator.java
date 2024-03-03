@@ -17,6 +17,7 @@ public class ArticleValidator {
             errors.add("Veuillez renseigner le taux de tva l'article");
             errors.add("Veuillez renseigner le prix unitaire TTC l'article");
             errors.add("Veuillez selectionner une categorie");
+            return errors;
         }
 
         if (!StringUtils.hasLength(articledto.getCodeArticle())) {
