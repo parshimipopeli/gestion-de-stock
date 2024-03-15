@@ -1,7 +1,9 @@
 package fr.parshimipopeli.gestion.de.stock.repository;
 
-import fr.parshimipopeli.gestion.de.stock.model.Role;
+import fr.parshimipopeli.gestion.de.stock.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface RoleRrepository extends JpaRepository<Long, Role> {
+@Repository
+public interface RoleRrepository extends JpaRepository<Role, Long > {
 }

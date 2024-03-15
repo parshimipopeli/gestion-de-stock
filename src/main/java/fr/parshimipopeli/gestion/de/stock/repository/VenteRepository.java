@@ -1,7 +1,9 @@
 package fr.parshimipopeli.gestion.de.stock.repository;
 
-import fr.parshimipopeli.gestion.de.stock.model.Vente;
+import fr.parshimipopeli.gestion.de.stock.entity.Vente;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface VenteRepository extends JpaRepository<Long, Vente> {
+@Repository
+public interface VenteRepository extends JpaRepository<Vente, Long> {
 }

@@ -1,4 +1,4 @@
-package fr.parshimipopeli.gestion.de.stock.model;
+package fr.parshimipopeli.gestion.de.stock.entity;
 
 public enum StatusCommande {
 
