@@ -10,7 +10,6 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-@Setter
 @Entity
 @Table(name="categorie")
 public class Categorie extends AbstactEntity {
