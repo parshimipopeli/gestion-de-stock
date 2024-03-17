@@ -1,6 +1,7 @@
 package fr.parshimipopeli.gestion.de.stock.services;
 
 import fr.parshimipopeli.gestion.de.stock.dto.ClientDto;
+import fr.parshimipopeli.gestion.de.stock.entity.Article;
 import fr.parshimipopeli.gestion.de.stock.entity.Client;
 import fr.parshimipopeli.gestion.de.stock.mapper.ClientDtoMapper;
 import fr.parshimipopeli.gestion.de.stock.repository.ClientRepository;
@@ -22,7 +23,10 @@ public class ClientService {
     }
 
     public void create(Client client) {
-        this.clientRepository.save(client);
+        Client clientEnBDD = this.clientRepository.findByEmail(client.getEmail());
+        if (clientEnBDD == null) {
+            this.clientRepository.save(client);
+        }
     }
 
     public Stream<ClientDto> search() {

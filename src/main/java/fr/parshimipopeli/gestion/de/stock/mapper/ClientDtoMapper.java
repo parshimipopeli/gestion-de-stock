@@ -11,7 +11,7 @@ import java.util.function.Function;
 public class ClientDtoMapper implements Function<Client, ClientDto> {
     @Override
     public ClientDto apply(@NotNull Client client) {
-        return new ClientDto(client.getNom(), client.getPrenom(), client.getEmail(), client.getAdresse(), client.getTelephone());
+        return new ClientDto(client.getNom(), client.getPrenom(), client.getAdresse(), client.getEmail(),  client.getTelephone());
 
     }
 
