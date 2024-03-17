@@ -35,6 +35,6 @@ public class Article extends AbstactEntity {
 
     @ManyToOne
     @JoinColumn(name="idcategorie")
-    private Categorie categorie;
+    private Categorie idCategorie;
 
 }

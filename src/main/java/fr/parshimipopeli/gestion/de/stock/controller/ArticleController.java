@@ -22,7 +22,7 @@ public class ArticleController {
 
     @ResponseStatus(value = HttpStatus.CREATED)
     @PostMapping
-    private void create(Article article) {
+    private void create(@RequestBody Article article) {
          this.articleService.create(article);
     }
 

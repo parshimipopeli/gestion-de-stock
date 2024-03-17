@@ -21,7 +21,7 @@ public class Categorie extends AbstactEntity {
     @Column(name="designation")
     private String designation;
 
-    @OneToMany(mappedBy = "categorie")
+    @OneToMany(mappedBy = "idCategorie")
     private List<Article> articles;
 
 
