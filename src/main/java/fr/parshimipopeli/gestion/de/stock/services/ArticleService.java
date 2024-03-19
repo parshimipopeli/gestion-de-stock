@@ -7,6 +7,7 @@ import fr.parshimipopeli.gestion.de.stock.repository.ArticleRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 @Service
@@ -32,4 +33,29 @@ public class ArticleService {
         return this.articleRepository.findAll()
                 .stream().map(articleDtoMapper);
     }
+
+    public Article searchOne(Long id) {
+        Optional<Article> optionalArticle = this.articleRepository.findById(id);
+        if (optionalArticle.isPresent()) {
+            return optionalArticle.get();
+        }
+        return null;
+    }
+
+    public void update(Long id, Article article) {
+        Article articleEnBDD = this.searchOne(id);
+        if (articleEnBDD.getId() == article.getId()) {
+            articleEnBDD.setCodeArticle(article.getCodeArticle());
+            articleEnBDD.setNom(article.getNom());
+            articleEnBDD.setDesignation(article.getDesignation());
+            articleEnBDD.setPrixUnitaireHT(article.getPrixUnitaireHT());
+            articleEnBDD.setTauxTVA(article.getTauxTVA());
+            articleEnBDD.setPrixUnitaireTTC(article.getPrixUnitaireTTC());
+            articleEnBDD.setPhoto(article.getPhoto());
+            articleEnBDD.setIdCategorie(article.getIdCategorie());
+            this.articleRepository.save(article);
+        }
+    }
+
+
 }
