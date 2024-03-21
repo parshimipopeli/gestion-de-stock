@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.stream.Stream;
 
+import static org.springframework.http.HttpStatus.NO_CONTENT;
+
 @RestController
 @RequestMapping("client")
 public class ClientController {
@@ -28,4 +30,19 @@ public class ClientController {
     public Stream<ClientDto> search() {
         return this.clientService.search();
     }
+
+    @GetMapping(path = "{id}")
+    public Client searchOne(@PathVariable Long id) {
+        return this.clientService.searchOne(id);
+    }
+
+    @ResponseStatus(NO_CONTENT)
+    @PutMapping(path = "{id}")
+    public void updateOne(@PathVariable Long id, @RequestBody Client client ) {
+        this.clientService.updateOne(id, client);
+    }
+
+
+
+
 }
