@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.stream.Stream;
 
 import static org.springframework.http.HttpStatus.NO_CONTENT;
+import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 
 @RestController
 @RequestMapping(path = "article")
@@ -40,7 +41,13 @@ public class ArticleController {
 
     @ResponseStatus(NO_CONTENT)
     @PutMapping(path = "{id}")
-    public void update(@PathVariable Long id, @RequestBody Article article ) {
-        this.articleService.update(id, article);
+    public void updateArticle(@PathVariable Long id, @RequestBody Article article ) {
+        this.articleService.updateArticle(id, article);
+    }
+
+    @ResponseStatus(NO_CONTENT)
+    @DeleteMapping(path = "{id}")
+    public void deleteOne(@PathVariable Long id) {
+        this.articleService.deleteOne(id);
     }
 }

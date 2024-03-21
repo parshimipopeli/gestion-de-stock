@@ -4,6 +4,7 @@ import fr.parshimipopeli.gestion.de.stock.dto.ArticleDto;
 import fr.parshimipopeli.gestion.de.stock.entity.Article;
 import fr.parshimipopeli.gestion.de.stock.mapper.ArticleDtoMapper;
 import fr.parshimipopeli.gestion.de.stock.repository.ArticleRepository;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -42,7 +43,7 @@ public class ArticleService {
         return null;
     }
 
-    public void update(Long id, Article article) {
+    public void updateArticle(Long id, Article article) {
         Article articleEnBDD = this.searchOne(id);
         if (articleEnBDD.getId() == article.getId()) {
             articleEnBDD.setCodeArticle(article.getCodeArticle());
@@ -53,8 +54,13 @@ public class ArticleService {
             articleEnBDD.setPrixUnitaireTTC(article.getPrixUnitaireTTC());
             articleEnBDD.setPhoto(article.getPhoto());
             articleEnBDD.setIdCategorie(article.getIdCategorie());
-            this.articleRepository.save(article);
+            this.articleRepository.save(articleEnBDD);
         }
+        this.articleRepository.save(articleEnBDD);
+    }
+
+    public void deleteOne(Long id) {
+        this.articleRepository.deleteById(id);
     }
 
 

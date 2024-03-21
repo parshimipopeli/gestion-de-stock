@@ -12,7 +12,7 @@ import java.util.function.Function;
 public class ArticleDtoMapper implements Function<Article, ArticleDto> {
     @Override
     public ArticleDto apply(@NotNull Article article) {
-        return new ArticleDto(article.getCodeArticle(), article.getNom(),   article.getDesignation(), article.getPrixUnitaireTTC());
+        return new ArticleDto(article.getCodeArticle(), article.getNom(), article.getDesignation(), article.getPrixUnitaireTTC());
     }
 
 }
