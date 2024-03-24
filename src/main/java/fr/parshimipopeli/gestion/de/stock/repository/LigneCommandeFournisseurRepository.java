@@ -1,7 +1,9 @@
 package fr.parshimipopeli.gestion.de.stock.repository;
 
-import fr.parshimipopeli.gestion.de.stock.model.LigneCommandeFournisseur;
+import fr.parshimipopeli.gestion.de.stock.entity.LigneCommandeFournisseur;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface LigneCommandeFournisseurRepository extends JpaRepository<Long, LigneCommandeFournisseur> {
+@Repository
+public interface LigneCommandeFournisseurRepository extends JpaRepository<LigneCommandeFournisseur, Long> {
 }

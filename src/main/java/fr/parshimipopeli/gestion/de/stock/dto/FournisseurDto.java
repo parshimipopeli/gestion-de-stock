@@ -1,7 +1,6 @@
 package fr.parshimipopeli.gestion.de.stock.dto;
 
-import fr.parshimipopeli.gestion.de.stock.model.Adresse;
-import fr.parshimipopeli.gestion.de.stock.model.Fournisseur;
+import fr.parshimipopeli.gestion.de.stock.entity.Adresse;
 import lombok.Builder;
 import lombok.Data;
 
@@ -28,36 +27,4 @@ public class FournisseurDto {
     private Integer idEntreprise;
 
     private List<CommandeFournisseurDto> commandeFournisseurList;
-
-    public static FournisseurDto fromEntity(Fournisseur fournisseur) {
-        if (fournisseur == null) {
-            return null;
-        }
-
-        return FournisseurDto.builder()
-                .nom(fournisseur.getNom())
-                .prenom(fournisseur.getPrenom())
-                .adresse(fournisseur.getAdresse())
-                .photo(fournisseur.getPhoto())
-                .mail(fournisseur.getMail())
-                .telephone(fournisseur.getTelephone())
-                .idEntreprise(fournisseur.getIdEntreprise())
-                .build();
-    }
-
-    public static Fournisseur toEntity(FournisseurDto fournisseurDto) {
-        if (fournisseurDto == null) {
-            return null;
-        }
-
-        Fournisseur fournisseur = new Fournisseur();
-        fournisseur.setNom(fournisseurDto.getNom());
-        fournisseur.setPrenom(fournisseurDto.getPrenom());
-        fournisseur.setAdresse(fournisseurDto.getAdresse());
-        fournisseur.setPhoto(fournisseurDto.getPhoto());
-        fournisseur.setMail(fournisseurDto.getMail());
-        fournisseur.setTelephone(fournisseurDto.getTelephone());
-        fournisseur.setIdEntreprise(fournisseurDto.getIdEntreprise());
-        return fournisseur;
-    }
 }
