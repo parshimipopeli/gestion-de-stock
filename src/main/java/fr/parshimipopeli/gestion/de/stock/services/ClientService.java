@@ -56,4 +56,8 @@ public class ClientService {
             this.clientRepository.save(clientEnBDD);
         }
     }
+
+    public void deleteOne(Long id) {
+        this.clientRepository.deleteById(id);
+    }
 }

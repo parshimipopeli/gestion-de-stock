@@ -42,6 +42,12 @@ public class ClientController {
         this.clientService.updateOne(id, client);
     }
 
+    @ResponseStatus(NO_CONTENT)
+    @DeleteMapping(path = "{id}")
+    public void deleteOne(@PathVariable Long id) {
+        this.clientService.deleteOne(id);
+    }
+
 
 
 
