@@ -5,6 +5,7 @@ import fr.parshimipopeli.gestion.de.stock.entity.Article;
 import fr.parshimipopeli.gestion.de.stock.entity.Client;
 import fr.parshimipopeli.gestion.de.stock.mapper.ClientDtoMapper;
 import fr.parshimipopeli.gestion.de.stock.repository.ClientRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.hibernate.validator.internal.constraintvalidators.bv.time.pastorpresent.PastOrPresentValidatorForLocalTime;
 import org.springframework.stereotype.Service;
 
@@ -40,10 +41,9 @@ public class ClientService {
 
     public Client searchOne(Long id) {
         Optional<Client> optionalClient = this.clientRepository.findById(id);
-        if (optionalClient.isPresent()) {
-            return optionalClient.get();
-        }
-        return null;
+        return optionalClient.orElseThrow(
+                 () -> new EntityNotFoundException("Aucun client n'existe avec cet ID")
+        );
     }
 
     public void updateOne(Long id, Client client) {
