@@ -25,10 +25,10 @@ public class AbstactEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @CreationTimestamp(source = SourceType.DB)
+    @CreatedDate
     private Instant creationDate;
 
-    @UpdateTimestamp
+    @LastModifiedDate
     private Instant lastUpdateDate;
 
 }

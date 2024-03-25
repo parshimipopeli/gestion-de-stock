@@ -4,10 +4,9 @@ import fr.parshimipopeli.gestion.de.stock.dto.ArticleDto;
 import fr.parshimipopeli.gestion.de.stock.entity.Article;
 import fr.parshimipopeli.gestion.de.stock.mapper.ArticleDtoMapper;
 import fr.parshimipopeli.gestion.de.stock.repository.ArticleRepository;
-import org.jetbrains.annotations.NotNull;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -37,10 +36,10 @@ public class ArticleService {
 
     public Article searchOne(Long id) {
         Optional<Article> optionalArticle = this.articleRepository.findById(id);
-        if (optionalArticle.isPresent()) {
-            return optionalArticle.get();
-        }
-        return null;
+            return optionalArticle.orElseThrow(
+                    () -> new EntityNotFoundException("Aucun article trouvé avec cet identifiant!")
+            );
+
     }
 
     public void updateArticle(Long id, Article article) {
@@ -62,6 +61,14 @@ public class ArticleService {
     public void deleteOne(Long id) {
         this.articleRepository.deleteById(id);
     }
+
+//    public Article findByCodeArticle(String codeArticle) {
+//        Article articleEnBDD = this.articleRepository.findByCodeArticle(codeArticle);
+//        if (articleEnBDD.getCodeArticle() != null) {
+//            return articleEnBDD;
+//        }
+//        return null;
+//    }
 
 
 }

@@ -1,19 +1,14 @@
 package fr.parshimipopeli.gestion.de.stock.services;
 
 import fr.parshimipopeli.gestion.de.stock.dto.ClientDto;
-import fr.parshimipopeli.gestion.de.stock.entity.Article;
 import fr.parshimipopeli.gestion.de.stock.entity.Client;
 import fr.parshimipopeli.gestion.de.stock.mapper.ClientDtoMapper;
 import fr.parshimipopeli.gestion.de.stock.repository.ClientRepository;
 import jakarta.persistence.EntityNotFoundException;
-import org.hibernate.validator.internal.constraintvalidators.bv.time.pastorpresent.PastOrPresentValidatorForLocalTime;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
-
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @Service
 public class ClientService {

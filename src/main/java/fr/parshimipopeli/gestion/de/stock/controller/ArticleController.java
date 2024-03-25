@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.stream.Stream;
 
 import static org.springframework.http.HttpStatus.NO_CONTENT;
-import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 
 @RestController
 @RequestMapping(path = "article")
@@ -50,4 +49,9 @@ public class ArticleController {
     public void deleteOne(@PathVariable Long id) {
         this.articleService.deleteOne(id);
     }
+
+//    @GetMapping(path = "{codeArticle}")
+//    public Article findByCodeArticle(@PathVariable String codeArticle) {
+//        return this.articleService.findByCodeArticle(codeArticle);
+//    }
 }
