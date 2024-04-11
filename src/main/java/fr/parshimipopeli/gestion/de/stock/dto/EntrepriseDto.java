@@ -7,7 +7,8 @@ public record EntrepriseDto (
          String description,
          String photo,
          String email,
-         String telephone
+         String telephone,
+         String siteWeb
 ) {}
 
 

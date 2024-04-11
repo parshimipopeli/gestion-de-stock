@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  # Service pour l'application Spring
+  myapp:
+    build: .
+    ports:
+      - "8080:8080"
+    # Volumes pour persister les données de l'application (facultatif)
+    volumes:
+      - ./app-data:/app/data
+
+  # Service pour la base de données
+  database:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: Phil6542#  # Remplacer par un mot de passe fort
+      POSTGRES_USER: postgres
+      POSTGRES_DB: gestionDeStock
+    # Volumes pour persister les données de la base (conseillé)
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  # Volume pour les données persistantes de la base de données (facultatif)
+  postgres-data: {}
