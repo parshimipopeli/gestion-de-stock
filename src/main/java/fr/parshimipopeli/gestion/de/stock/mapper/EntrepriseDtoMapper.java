@@ -12,6 +12,6 @@ public class EntrepriseDtoMapper implements Function<Entreprise, EntrepriseDto> 
 
     @Override
     public EntrepriseDto apply(@NotNull Entreprise entreprise) {
-        return new EntrepriseDto(entreprise.getNom(), entreprise.getDescription(), entreprise.getPhoto(), entreprise.getEmail(), entreprise.getSiteWeb());
+        return new EntrepriseDto(entreprise.getNom(), entreprise.getDescription(), entreprise.getPhoto(), entreprise.getEmail(), entreprise.getTelephone(), entreprise.getSiteWeb());
     }
 }
