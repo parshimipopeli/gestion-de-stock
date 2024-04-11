@@ -3,7 +3,6 @@ package fr.parshimipopeli.gestion.de.stock.mapper;
 import fr.parshimipopeli.gestion.de.stock.dto.ArticleDto;
 import fr.parshimipopeli.gestion.de.stock.entity.Article;
 import jakarta.validation.constraints.NotNull;
-import lombok.NonNull;
 import org.springframework.stereotype.Component;
 
 import java.util.function.Function;
