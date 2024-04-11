@@ -30,6 +30,11 @@ public class EntrepriseController {
         return this.entrepriseService.search();
     }
 
+    @GetMapping(path = "{id}")
+    public Entreprise searchOne(@PathVariable Long id) {
+        return this.entrepriseService.searchOne(id);
+    }
+
 
 
 

@@ -4,8 +4,10 @@ import fr.parshimipopeli.gestion.de.stock.dto.EntrepriseDto;
 import fr.parshimipopeli.gestion.de.stock.entity.Entreprise;
 import fr.parshimipopeli.gestion.de.stock.mapper.EntrepriseDtoMapper;
 import fr.parshimipopeli.gestion.de.stock.repository.EntrepriseRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.stream.Stream;
 
 @Service
@@ -28,5 +30,13 @@ public class EntrepriseService {
     public Stream<EntrepriseDto> search() {
         return this.entrepriseRepository.findAll()
                 .stream().map(entrepriseDtoMapper);
+    }
+
+
+    public Entreprise searchOne(Long id) {
+        Optional<Entreprise> optionalEntreprise = this.entrepriseRepository.findById(id);
+        return optionalEntreprise.orElseThrow(
+                () -> new EntityNotFoundException("Aucune entreprise trouvée avec cet id!")
+        );
     }
 }
